@@ -1,9 +1,9 @@
 
-import { NativeModules, DeviceEventEmitter } from 'react-native';
+import { NativeModules, DeviceEventEmitter, Platform } from 'react-native';
 
 const { RNEnjoySdk } = NativeModules;
 
-const EnjoySdk = {
+const EnjoySdk = Platform.OS === 'android' ? ({
   initWallAd: (placementId, adMark) => RNEnjoySdk.initWallAd(placementId, adMark || null),
   showWallAd: wallObj => RNEnjoySdk.showWallAd(wallObj),
   addOnWallAdCloseListener: listener => DeviceEventEmitter.addListener('enjoyOnWallAdClosed', listener),
@@ -11,6 +11,14 @@ const EnjoySdk = {
  
   finishReward: rewardId => RNEnjoySdk.finishReward(rewardId),
   addOnRewardedListener: listener => DeviceEventEmitter.addListener('enjoyOnRewarded', listener)
-}
+}) : ({
+  initWallAd: () => Promise.resolve(),
+  showWallAd: () => Promise.resolve(),
+  addOnWallAdCloseListener: () => ({ remove: () => null }),
+  addOnWallAdClickedListener: () => ({ remove: () => null }),
+  
+  finishReward: () => Promise.resolve(),
+  addOnRewardedListener: () => ({ remove: () => null })
+});
 
-export default EnjoySdk;
+export default EnjoySdk
