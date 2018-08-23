@@ -2,14 +2,16 @@
 
 # react-native-enjoy-sdk
 
-## Table of Content
-- [Install Instruction](#install-instruction)
--- [Mostly automatic installation](#mostly-automatic-installation) 
--- [Manual installation](#manual-installation) 
-- [After installation instruction](#after-installation-instruction)
-- [Usage](#usage)
--- [Available Methods](#available-methods)
--- [Data Types](#data-types)
+## Table of contents
+<!--ts-->
+* [Install Instruction](#install-instruction)
+    * [Mostly automatic installation](#mostly-automatic-installation) 
+    * [Manual installation](#manual-installation) 
+* [After installation instruction](#after-installation-instruction)
+* [Usage](#usage)
+    * [Available Methods](#available-methods)
+    * [Data Types](#data-types)
+<!--te-->
 
 ## Install Instruction
 
@@ -186,9 +188,9 @@ import EnjoySdk from 'react-native-enjoy-sdk';
 ```
 
 #### Available Methods
-- `initWallAd(placementId: string, adMark?: string): Promise<AdObj>`
--- Initiate Wall Ad with **`placementId`**.
--- If you want to give the current ad a unique identification, you can use **`adMark`**, which is optional. 
+* `initWallAd(placementId: string, adMark?: string): Promise<AdObj>`
+    * Initiate Wall Ad with **`placementId`**.
+    * If you want to give the current ad a unique identification, you can use **`adMark`**, which is optional. 
 
 ```javascript
 EnjoySdk.initWallAd(WALL_AD_PLACEMENT_ID, userId)
@@ -198,8 +200,8 @@ EnjoySdk.initWallAd(WALL_AD_PLACEMENT_ID, userId)
 
 <br/>
 
-- `showWallAd(adObj: AdObj): Promise<AdObj>`
--- Show Wall Ad
+* `showWallAd(adObj: AdObj): Promise<AdObj>`
+    * Show Wall Ad
 
 ```javascript
 EnjoySdk.showWallAd(adObj)
@@ -209,9 +211,9 @@ EnjoySdk.showWallAd(adObj)
 
 <br/>
 
-- `addOnWallAdCloseListener(clb: (adObj: AdObj) => void ): Subscription`
--- Callback is called when Wall Ad is closed
--- Use `remove()` method from  `Subscription` object to remove listener
+* `addOnWallAdCloseListener(clb: (adObj: AdObj) => void ): Subscription`
+    * Callback is called when Wall Ad is closed
+    * Use `remove()` method from  `Subscription` object to remove listener
 
 ```javascript
 componentDidMount () {
@@ -227,9 +229,9 @@ componentWillUnmount () {
 
 <br/>
 
-- `addOnWallAdClickedListener(clb: (adObj: AdObj) => void ): Subscription`
--- Callback is called when user click on Wall Ad
--- Use `remove()` method from  `Subscription` object to remove listener
+* `addOnWallAdClickedListener(clb: (adObj: AdObj) => void ): Subscription`
+    * Callback is called when user click on Wall Ad
+    * Use `remove()` method from  `Subscription` object to remove listener
 
 ```javascript
 componentDidMount () {
@@ -245,9 +247,9 @@ componentWillUnmount () {
 
 <br/>
 
-- `addOnRewardedListener(clb: (data: { rewards: Array<rewardObj> }) => void): Subscription`
--- Callback is called when user needs to receive reward(s)
--- Use `remove()` method from  `Subscription` object to remove listener
+* `addOnRewardedListener(clb: (data: { rewards: Array<rewardObj> }) => void): Subscription`
+    * Callback is called when user needs to receive reward(s)
+    * Use `remove()` method from  `Subscription` object to remove listener
 
 
 ```javascript
@@ -264,8 +266,8 @@ componentWillUnmount () {
 
 <br/>
 
-- `finishReward(rewardId: String): Promise<void>`
--- Call this method when you reward your user
+* `finishReward(rewardId: String): Promise<void>`
+    * Call this method when you reward your user
 
 ```javascript
 EnjoySdk.finishReward(rewardId)
