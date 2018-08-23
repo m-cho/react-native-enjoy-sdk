@@ -27,6 +27,8 @@
 ### Manual installation
 
 #### Android
+`$ npm install react-native-enjoy-sdk --save`
+
 1. Append the following lines to `android/settings.gradle`:
 ```diff
 +include ':react-native-enjoy-sdk'
