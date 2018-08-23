@@ -2,7 +2,7 @@
 {
   "name": "react-native-enjoy-sdk",
   "title": "React Native Enjoy Sdk",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,26 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-enjoy-sdk.git",
-    "baseUrl": "https://github.com/github_account/react-native-enjoy-sdk"
+    "url": "git+https://github.com/m-cho/react-native-enjoy-sdk.git",
+    "baseUrl": "https://github.com/m-cho/react-native-enjoy-sdk"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "enjoy-sdk"
   ],
-  "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
-  },
   "license": "Apache-2.0",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.1"
   },
   "devDependencies": {
-    
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.1" 
   }

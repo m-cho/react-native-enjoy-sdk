@@ -46,26 +46,26 @@ dependencies {
   - Add `import link.enjoy.rnsdk.RNEnjoySdkPackage;` to the imports at the top of the file
   - Add `new RNEnjoySdkPackage()` to the list returned by the `getPackages()` method
 ```diff
-import android.app.Application;
-import com.facebook.react.ReactApplication;
-import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
+ import android.app.Application;
+ import com.facebook.react.ReactApplication;
+ import com.facebook.react.ReactPackage;
+ import com.facebook.react.shell.MainReactPackage;
 +import link.enjoy.rnsdk.RNEnjoySdkPackage;
 
-import java.util.Arrays;
-import java.util.List;
+ import java.util.Arrays;
+ import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
-	...
-	...
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-+            new RNEnjoySdkPackage()
-      );
-    }
-}
+ public class MainApplication extends Application implements ReactApplication {
+ 	...
+ 	...
+     @Override
+     protected List<ReactPackage> getPackages() {
+       return Arrays.<ReactPackage>asList(
+           new MainReactPackage(),
++          new RNEnjoySdkPackage()
+       );
+     }
+ }
 
 ```
 
@@ -119,64 +119,64 @@ Full list of corresponded life-cycle method:
 
 Example: 
 ```diff java
-import com.facebook.react.ReactActivity;
+ import com.facebook.react.ReactActivity;
 +import link.enjoy.rnsdk.EnjoyLifecycleHandler;
 +import android.os.Bundle;
 
-public class MainActivity extends ReactActivity {
-+    private  final  String  ENJOY_APP_ID  =  ""; // Fill with Enjoy App Id
+ public class MainActivity extends ReactActivity {
++     private  final  String  ENJOY_APP_ID  =  ""; // Fill with Enjoy App Id
 
-+    @Override
-+    protected void onCreate(Bundle savedInstanceState) {
-+        super.onCreate(savedInstanceState);
-+        EnjoyLifecycleHandler.getInstance().onCreate(this, ENJOY_APP_ID);
-+    }
++     @Override
++     protected void onCreate(Bundle savedInstanceState) {
++         super.onCreate(savedInstanceState);
++         EnjoyLifecycleHandler.getInstance().onCreate(this, ENJOY_APP_ID);
++     }
 
-+    @Override
-+    protected void onStart() {
-+        super.onStart();
-+        EnjoyLifecycleHandler.getInstance().onStart();
-+    }
++     @Override
++     protected void onStart() {
++         super.onStart();
++         EnjoyLifecycleHandler.getInstance().onStart();
++     }
 
-+    @Override
-+    protected void onResume() {
-+        super.onResume();
-+        EnjoyLifecycleHandler.getInstance().onResume();
-+    }
++     @Override
++     protected void onResume() {
++         super.onResume();
++         EnjoyLifecycleHandler.getInstance().onResume();
++     }
 
-+    @Override
-+    protected void onPause() {
-+        super.onPause();
-+        EnjoyLifecycleHandler.getInstance().onPause();
-+    }
++     @Override
++     protected void onPause() {
++         super.onPause();
++         EnjoyLifecycleHandler.getInstance().onPause();
++     }
 
-+    @Override
-+    protected void onStop() {
-+        super.onStop();
-+        EnjoyLifecycleHandler.getInstance().onStop();
-+    }
++     @Override
++     protected void onStop() {
++         super.onStop();
++         EnjoyLifecycleHandler.getInstance().onStop();
++     }
 
-+    @Override
-+    protected void onRestart() {
-+        super.onRestart();
-+        EnjoyLifecycleHandler.getInstance().onRestart();
-+    }
++     @Override
++     protected void onRestart() {
++         super.onRestart();
++         EnjoyLifecycleHandler.getInstance().onRestart();
++     }
 
-+    @Override
-+    protected void onDestroy() {
-+        super.onDestroy();
-+        EnjoyLifecycleHandler.getInstance().onDestroy();
-+    }
++     @Override
++     protected void onDestroy() {
++         super.onDestroy();
++         EnjoyLifecycleHandler.getInstance().onDestroy();
++     }
 
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
-    @Override
-    protected String getMainComponentName() {
-        return "example";
-    }
-}
+     /**
+      * Returns the name of the main component registered from JavaScript.
+      * This is used to schedule rendering of the component.
+      */
+     @Override
+     protected String getMainComponentName() {
+         return "example";
+     }
+ } 
 ```
 
 <br/>
@@ -223,7 +223,7 @@ componentDidMount () {
 }
 
 componentWillUnmount () {
-	this.onWallAdCloseSubscription.remove();
+    this.onWallAdCloseSubscription.remove();
 }
 ```
 
@@ -241,7 +241,7 @@ componentDidMount () {
 }
 
 componentWillUnmount () {
-	this.onWallAdClickedSubscription.remove();
+    this.onWallAdClickedSubscription.remove();
 }
 ```
 
@@ -260,7 +260,7 @@ componentDidMount () {
 }
 
 componentWillUnmount () {
-	this.onRewardedSubscription.remove();
+    this.onRewardedSubscription.remove();
 }
 ```
 
@@ -280,18 +280,18 @@ EnjoySdk.finishReward(rewardId)
 #### Data Types
 ```typescript
 type AdObj = {
-	adType: string;
-	placementId: string;
+    adType: string;
+    placementId: string;
 }
 
 type Subscription = {
-	remove: () => void
+    remove: () => void
 }
 
 type RewardObj = {
-	rewardId: string;
-	rewardNum: number;
-	adMark: string;
-	transactionId: string;
+    rewardId: string;
+    rewardNum: number;
+    adMark: string;
+    transactionId: string;
 }
 ```
