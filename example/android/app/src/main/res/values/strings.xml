@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">example</string>
+    <!-- Your Enjoy App Id -->
+    <string name="enjoy_app_id"></string>   
+</resources>
