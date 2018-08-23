@@ -108,15 +108,16 @@ allprojects {
 2. In **`android/app/src/main[...]/MainActivity.java`**, rewrite Activity related life-cycle method, and invoke corresponded Enjoy SDK method from it. Pass your **Enjoy App Id** to **Enjoy SDK `onCreate`** method.
 
 Full list of corresponded life-cycle method:
-|Activity Life Cycle| Enjoy SDK Corresponded method |
-|--|--|
+
+| Activity Life Cycle | Enjoy SDK Corresponded method |
+| -- | -- |
+| onCreate() | onCreate() |
 | onStart() | onStart() |
-|onResume() | onResume() |
+| onResume() | onResume() |
 | onPause() | onPause() |
 | onStop() | onStop() |
 | onRestart() | onRestart() |
 | onDestroy() | onDestroy() |
-
 
 
 Example: 
