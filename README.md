@@ -111,6 +111,7 @@ Full list of corresponded life-cycle method:
 
 | Activity Life Cycle | Enjoy SDK Corresponded method |
 | -- | -- |
+| onCreate() | onCreate() |
 | onStart() | onStart() |
 | onResume() | onResume() |
 | onPause() | onPause() |
