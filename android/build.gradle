@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    compile 'link.enjoy.sdk:enjoyAds:0.2.8'
+    compile 'link.enjoy.sdk:enjoyAds:+'
     compile 'com.facebook.react:react-native:+'
 }
 
