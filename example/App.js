@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import EnjoySdk from 'react-native-enjoy-sdk';
 
-export default class App extends Component {
-  static WALL_AD_PLACEMENT_ID = ''  // Your Wall Ad Placement Id
+const WALL_AD_PLACEMENT_ID = ''  // Your Wall Ad Placement Id
 
+export default class App extends Component {
   state = {
     rewards: []
   }

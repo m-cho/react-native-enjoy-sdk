@@ -52,7 +52,9 @@ public class RNEnjoySdkModule extends ReactContextBaseJavaModule implements Rewa
 
         enjoyAds = EnjoyLifecycleHandler.getInstance().getEnjoyAds();
 
-        enjoyAds.setRewardListener(this);
+        if (enjoyAds == null) {
+            enjoyAds.setRewardListener(this);
+        }
     }
 
     @Override

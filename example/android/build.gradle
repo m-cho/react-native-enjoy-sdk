@@ -19,7 +19,6 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
-        jcenter()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
@@ -28,9 +27,8 @@ allprojects {
             url 'https://maven.google.com/'
             name 'Google'
         }
-        maven {
-            url 'http://mvn.dreamsky.me:6080/'
-        }
+        maven { url 'http://mvn.dreamsky.me:6080/' }
+        jcenter()
     }
 }
 
