@@ -49,17 +49,17 @@ public class RNEnjoySdkModule extends ReactContextBaseJavaModule implements Rewa
     public RNEnjoySdkModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.mReactContext = reactContext;
-
-        enjoyAds = EnjoyLifecycleHandler.getInstance().getEnjoyAds();
-
-        if (enjoyAds == null) {
-            enjoyAds.setRewardListener(this);
-        }
     }
 
     @Override
     public String getName() {
         return "RNEnjoySdk";
+    }
+
+    private void initModule () {
+        this.enjoyAds = EnjoyLifecycleHandler.getInstance().getEnjoyAds();
+
+        this.enjoyAds.setRewardListener(this);
     }
 
     private void sendEvent (String eventName, @Nullable WritableMap params) {
@@ -152,6 +152,8 @@ public class RNEnjoySdkModule extends ReactContextBaseJavaModule implements Rewa
 
     @ReactMethod
     public void initWallAd (String placementId, @Nullable String adMark, Promise promise) {
+        if (this.enjoyAds == null) { this.initModule(); }
+
         WallAd wallAd = wallAds.get(placementId);
 
         if (wallAd == null) {
@@ -197,7 +199,9 @@ public class RNEnjoySdkModule extends ReactContextBaseJavaModule implements Rewa
             return;
         }
 
-        enjoyAds.finishReward(rewardLogBean);
+        if (this.enjoyAds != null) {
+            this.enjoyAds.finishReward(rewardLogBean);
+        }
         promise.resolve(null);
     }
 }

@@ -19,7 +19,7 @@ public class EnjoyLifecycleHandler {
     private EnjoyLifecycleHandler() {}
 
     public EnjoyAds getEnjoyAds() {
-        return enjoyAds;
+        return this.enjoyAds;
     }
 
     public void onCreate(Activity activity, String appId) {
