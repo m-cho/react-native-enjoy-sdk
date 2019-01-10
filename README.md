@@ -96,7 +96,7 @@ allprojects {
         mavenLocal()
         jcenter()
 +       maven {
-+           url 'http://mvn.dreamsky.me:6080/'
++           url 'http://mvn.enjoy.link:6080/'
 +       }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
